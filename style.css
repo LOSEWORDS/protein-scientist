@@ -10,3 +10,30 @@
 .detail table{width:100%;border-collapse:collapse;font-size:12px;margin:14px 0}.detail th,.detail td{text-align:left;padding:8px 5px;border-bottom:1px solid #dce4e5}.controls{flex-wrap:wrap}
 
 .intro .intro-heading{font-size:clamp(20px,2vw,28px);font-weight:500;margin:12px 0}.intro .intro-description{max-width:920px;line-height:1.6}
+
+/* Review-only layout: one reading path, supporting records collapsed. */
+main{max-width:1450px}.workspace{grid-template-columns:minmax(0,1.5fr) minmax(320px,1fr)}
+.workspace>aside{grid-column:1/-1}.workspace>aside .panelhead,.workspace>aside>.subtle{display:none}
+#timeline{display:flex;gap:8px;padding:10px}.event{margin:0;padding:12px;flex:1}.event .meta{display:none}
+.detail{max-height:none}.detail>.eyebrow{margin-bottom:8px}.detail .block:first-child{border:0;margin-top:0;padding-top:0}
+.detail .block p{font-size:15px;line-height:1.75}.detail details .block p{font-size:13px}
+#viewer{height:440px}.intro .intro-description{font-size:13px;max-width:850px}
+@media(max-width:900px){.workspace{grid-template-columns:1fr}.detail{grid-column:auto}#timeline{overflow-x:auto}.event{min-width:150px}#viewer{height:360px}}
+
+/* Minimal, phase-specific presentation. */
+[hidden]{display:none!important}
+#before,#after,#stageType,#candidateLabel{display:none!important}
+.intro{margin-bottom:18px}.intro .intro-description{margin:4px 0 0;color:var(--muted);font-size:15px}
+.viewer-tools{margin:0 0 0 auto;position:relative}.viewer-tools>summary{padding:7px 10px}
+.extra-tools{position:absolute;right:0;top:34px;z-index:10;width:180px;display:grid;gap:10px;background:white;border:1px solid var(--line);border-radius:8px;padding:14px;box-shadow:0 8px 24px #152b3c20}
+.controls{min-height:54px}.request-panel{padding:14px 20px}
+
+.intro{gap:24px;align-items:center}.intro .case{text-align:right;flex-shrink:0;font-size:18px}.intro .case span{font-size:12px}@media(max-width:600px){.intro{align-items:flex-start;flex-direction:column;gap:10px}.intro .case{text-align:left;font-size:15px}}
+
+.title-with-icon{display:flex;align-items:center;gap:12px}.title-icon{font-size:38px;line-height:1;color:var(--teal);font-weight:400}
+
+.detail #final{margin-top:20px;padding:18px 0 0;border:0;border-top:1px solid var(--line);border-radius:0}.detail #final .finalheading h2{font-size:21px;margin-bottom:8px}.detail #final .finalheading{display:block}.detail #finalReason{font-size:14px;line-height:1.7}.detail #final p,.detail #final summary{overflow-wrap:anywhere}
+
+#stageTitle,#detailTitle{color:var(--teal)}
+
+#stageTitle,#detailTitle{font-size:21px;line-height:1.45}
