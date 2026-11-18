@@ -1,0 +1,134 @@
+{
+  "session_id": "8fb1b0b66ee84a9d8ca315cf67b0fa81",
+  "session_sha256": "81706c179e5fa02193bb37fcb1d8aa5253ba013680528912de112d0b7f3a2ec3",
+  "kind": "Editorial summaries grounded in recorded decisions and measurements; not verbatim model reasoning.",
+  "rounds": [
+    {
+      "title": "Generate the initial prediction",
+      "start": 0,
+      "end": 4,
+      "label": "Initial prediction",
+      "question": "The first predicted complex",
+      "text": "The agent resolved the supplied 218-residue protein sequence and ligand SMILES, then called Boltz-2 with the cached MSA. One protein–ligand complex was generated. This is the original prediction, before structural assessment or revision.",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "memory_versions": [
+        1,
+        2
+      ],
+      "judgment": "Inspect the generated structure before deciding whether revision is needed.",
+      "tags": [
+        "Boltz-2 prediction",
+        "Original structure",
+        "Not yet assessed"
+      ]
+    },
+    {
+      "title": "Why not deliver the first prediction?",
+      "start": 5,
+      "end": 8,
+      "label": "Round 1 · Assess the prediction",
+      "question": "Does a confident prediction satisfy the request?",
+      "text": "Boltz-2 produced a confident complex, but confidence did not establish physical validity. The assessment found one protein–ligand clash while molecular identity and the other enabled checks passed. The agent therefore sought contact measurements before deciding how to revise the structure.",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ],
+      "memory_versions": [
+        3,
+        4
+      ],
+      "judgment": "A measured defect requires investigation; confidence alone is insufficient.",
+      "tags": [
+        "Initial structure",
+        "10/11 checks passed",
+        "1 clash"
+      ]
+    },
+    {
+      "title": "Why try a local repair?",
+      "start": 9,
+      "end": 14,
+      "label": "Round 2 · Form a testable hypothesis",
+      "question": "Can the clash be removed without abandoning the predicted pocket?",
+      "text": "Contact analysis placed the short approach at Cys25 within a 16-residue contact set. The agent treated local repair as a hypothesis: remove the clash while preserving molecular identity and all 16 parent contacts. It registered those acceptance conditions before requesting refinement.",
+      "evidence_ids": [
+        "E4",
+        "E5",
+        "E6",
+        "E7"
+      ],
+      "memory_versions": [
+        5,
+        6,
+        7
+      ],
+      "judgment": "Test a limited repair against explicit preservation conditions.",
+      "tags": [
+        "Local-repair hypothesis",
+        "16 contacts to preserve",
+        "Test registered"
+      ]
+    },
+    {
+      "title": "Did the repair hold up?",
+      "start": 15,
+      "end": 24,
+      "label": "Round 3 · Test and verify",
+      "question": "Was the defect resolved while retaining the original contact pattern?",
+      "text": "The refinement generated a new structure. Reassessment found zero clashes and 11/11 enabled checks passed. All 16 parent contact residues remained within 4 Å. The aligned whole-chain Cα change was 0.166 Å. The recorded revision contract accepted the candidate as computationally feasible.",
+      "evidence_ids": [
+        "E8",
+        "E9",
+        "E10",
+        "E11",
+        "E12"
+      ],
+      "memory_versions": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "judgment": "The measured repair target and contact-preservation conditions were met.",
+      "tags": [
+        "Clashes 1 → 0",
+        "Parent contacts retained",
+        "Revision accepted"
+      ]
+    },
+    {
+      "title": "Why accept this structure and stop?",
+      "start": 25,
+      "end": 34,
+      "label": "Delivered · Evidence-backed choice",
+      "question": "Is there a supported reason to continue revising?",
+      "text": "The revised candidate passed the registered repair contract. The original still failed the protein–ligand distance check and was retained as an alternative record, not an eligible delivery. GNINA signals were mixed; they do not establish improved experimental accuracy.",
+      "evidence_ids": [
+        "E12",
+        "E13",
+        "E14",
+        "E15",
+        "E16",
+        "E17"
+      ],
+      "memory_versions": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "judgment": "Deliver the only eligible candidate under selection-policy-v3. Local repair succeeded; experimental pose accuracy remains unknown.",
+      "tags": [
+        "Revised structure selected",
+        "Original retained",
+        "Accuracy unverified"
+      ]
+    }
+  ]
+}
