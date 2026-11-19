@@ -1,0 +1,277 @@
+四面体-1
+预览
+
+易
+易先生
+预测 protein.fasta 文件中 218 个氨基酸残基的精确蛋白质序列和 ligand.csv 文件中精确的异构体 SMILES 所对应的蛋白质-配体复合物。所要求的状态是与该配体结合的复合物。未指定任何特定的结合位点或构象变化。未附多序列比对 (MSA)。如有需要，请使用您的标准流程生成 MSA，并报告所用方法。使用现有的科学工具评估生成的结构。基于已测量的证据，判断是否需要进行任何结构修正。不要假设修正是必要的。如果您修正了结构，请在修正之前说明要解决的问题和验收标准，然后检查这些标准是否得到满足。保留所提供的蛋白质序列和配体的身份、立体化学和形式电荷。不要在不进行任何操作的情况下截断蛋白质或修改配体。如果需要任何输入更改，请明确报告。请提供：1. 初始预测的复合物 a
+四闪光
+
+ligand.csv
+0.1 KiB
+(The target ligand specified by its isomeric SMILES. This defines its molecular connectivity, stereochemistry, and formal charge. Please preserve this molecular identity during prediction.)
+Download
+protein.fasta
+0.2 KiB
+(The exact 218-residue protein sequence to use for complex prediction. Please preserve the full sequence without truncation or mutation.)
+Download
+预测 protein.fasta 文件中 218 个氨基酸残基的精确蛋白质序列和 ligand.csv 文件中精确的异构体 SMILES 所对应的蛋白质-配体复合物。所要求的状态是与该配体结合的复合物。未指定任何特定的结合位点或构象变化。未提供多序列比对 (MSA)。如有需要，请使用您常用的流程生成 MSA，并报告所用方法。使用现有的科学工具评估生成的结构。基于已测量的证据，判断是否需要进行任何结构修正。不要假定修正是必要的。如果您修正了结构，请在修正之前说明要解决的问题和验收标准，然后检查这些标准是否得到满足。保留所提供的蛋白质序列和配体的身份、立体化学和形式电荷。不要在不显式地截断蛋白质或修改配体。如果需要任何输入更改，请明确报告。请提供：1. 初始预测的复合物和最终选定的复合物，以可下载的 PDB 或 mmCIF 文件形式提供；如果配体可用，请以 SDF 文件形式提供。 2. 简明扼要地总结每个阶段的证据、行动和决策。3. 每次修改前后进行的结构检查。4. 选择最终结构并停止的原因。5. 剩余的不确定性和局限性。区分物理有效性和模型置信度与实验构象的准确性。如果没有合理的修改，请提供初始预测并解释原因。不提供实验目标结构或参考结合构象。不要将此蛋白质-配体复合物的实验结构作为答案或模板。披露使用的任何结构模板或外部证据。
+
+研究过程
+根据给定的 218 个氨基酸残基的蛋白质序列和异构配体 SMILES 预测蛋白质-配体复合物结构，用测量的证据评估该结构，决定是否需要修改，并将选定的结构作为 mmCIF 文件交付。
+全部收起
+
+8 个问题 · 12 个操作 · 5 个结构· 已存档
+
+Q1
+Q2
+Q3
+Q4
+Q5
+Q6
+Q7
+Q8
+Q1该蛋白质-配体复合物中的分子是什么？其序列和形式电荷是否与提供的数据一致？
+已解决
+
+动机：该任务要求精确地保留序列、配体特性、立体化学结构和电荷。结论：该蛋白质是一条由218个氨基酸残基组成的单链；配体净电荷为+1，具有两个手性中心，类似于已知的环氧抑制剂，但缺少环氧环。
+1.1验证蛋白质序列和配体化学特性
+完全的
+
+配体身份验证结论
+Why study this
+Each task requirement—preserving the sequence as given, the ligand identity, stereochemistry and charge—must be tied to a concrete molecular entity; if the ligand were misidentified or its charge altered, all downstream contact measurements would be meaningless.
+Hypothesis
+The supplied ligand resembles the scaffold of known epoxy-class cysteine protease inhibitors but lacks the epoxide ring
+Observation
+Protein: single chain of 218 residues; ligand: 25 heavy atoms, net charge +1, two chiral centers, no epoxide ring.
+Interpretation
+The input maps unambiguously to one protein chain and one small organic molecule, with the chain length and all atoms preserved in the structure. The ligand differs from known epoxide-class inhibitors only in that the epoxide ring is opened to a diol and carboxyl group; this difference bears on whether a covalent adduct could form, and this task treats the given opened-ring form as specified.
+
+1.2基于文献的底物沟槽和环氧化物类抑制剂的机制线索
+完全的
+
+这些文献引出
+Why study this
+The open-ring form of the ligand differs from known epoxide-class inhibitors, which informs the expected binding mode; literature clues provide testable structural expectations rather than relying only on self-confirming predictions.
+Hypothesis
+The ligand should be embedded in the substrate groove, with the leucine side chain entering the S2 pocket and the guanidinium group extending toward one side of the groove.
+Observation
+Literature supports the inhibitor identity and mechanistic direction: leucine entering S2 and the epoxide attacking the catalytic cysteine; no residue numbering for this construct is given.
+Interpretation
+Mechanism-level evidence supports the ligand's inhibitor identity and provides checkable directions: the ligand should lie in the substrate groove, leucine enters S2, and the terminal carboxyl group interacts with a polar or positively charged partner. These descriptions remain at the family level and lack residue numbering for this protein, so they cannot fix any contact and serve only as competing hypotheses to compare against structural readings. The search reached only abstract and fragment level; no full-text mechanistic reading was done.
+
+Follows Verify protein sequence and ligand chemical identity
+
+Q2在预测的结构中，配体是否反复占据同一位置？
+已解决
+
+紧随 Q1 之后
+研究动机：考察蛋白质将配体定位在何处以及该位置是否稳定。结论：候选结构几乎都占据同一裂隙，具有一致的接触残基，且未出现第二个支持位点。
+2.1初步预测以观察配体的位置
+完全的
+
+这些结构
+Why study this
+The ligand position in the initial predicted structures is a starting point for judging the binding site; later structures can then be compared with it.
+Hypothesis
+At least one pocket will be repeatedly occupied, and the ligand will run in a substrate-like orientation
+Observation
+The chain and ligand atoms are complete; the contact residue set is the same across all structures, concentrated at the same cleft.
+Interpretation
+The inhibitor was placed in the same well-defined cleft, with an identical contact residue set across all structures, consistent with the substrate groove of a cysteine protease. This cleft contains Cys25 and His163, His164, forming the catalytic combination commonly seen in this class of proteases; this is internal consistency within the predicted structures, not experimental proof. No second site was supported, but this only indicates that no other site was found. Which end of the ligand faces which side still requires examination at the level of pose orientation, on which the following site and orientation checks are designed.
+
+Follows Verify protein sequence and ligand chemical identity, Literature-based mechanistic clues for the substrate groove and epoxide-class inhibitors
+
+第三季度表面还存在哪些其他可药物靶向的空腔，它们与观察到的部位有何对应关系？
+已解决
+
+合并Q1，Q2
+综合分析动机：为了判断该部位是否具有独特性，需要分别检查表面凹陷。结论：三个凹陷与观察到的裂隙相对应，一个是相邻的小牙龈袋，其余为远处表面的凹陷。
+3.1表面空腔的成对枚举和代表性结构姿态的测量
+完全的
+
+这条裂缝
+Why study this
+To judge whether the site is unique, surface cavities must be examined separately while the pose geometry at the occupied site is also measured, so that they can serve as targets for subsequent ligand placement.
+Hypothesis
+The occupied cleft should be a prominent cavity, and there should be additional unoccupied cavities elsewhere on the surface.
+Observation
+Three cavities correspond to the observed cleft, one is adjacent to it, and the remainder lie on distal surfaces.
+Interpretation
+The cavity assessment and the predicted structures converge on the same catalytic cleft, and the representative structure already shows a substrate-like orientation: one end of the ligand presses against the catalytic cysteine, and the terminal carboxyl group makes coordinating contacts with Gln19 and His164. At the site level, therefore, no replacement is needed; what requires examination is the orientation and local geometry. Still undetermined are the path of the guanidinium tail along one side of the groove, and whether the backbone and side chains at residues 61-72 are consistent across the different structures; these two points become the subject of subsequent questions.
+
+Follows Initial prediction to observe where the ligand is placed
+
+第四季度当配体被放置到各个空腔中时，哪些位置可以同时与催化残基保持接触？
+已解决
+
+合并Q1，Q2，第三季度
+合成动机：如果只有裂隙能够实现类似底物的接触，则位点定位将获得独立的证据。结论：只有催化裂隙在与催化半胱氨酸接触的同时，才能始终保持配体；即使配体被强力推入，相邻的小口袋和远端凹陷也会恢复原状或被缩小。
+4.1将配体依次放入每个空腔中，以测试哪些位置是可行的。
+完全的
+
+在每个测试的空腔中，配体-催化残基接触是否得以维持？
+Why study this
+The cavity map only shows surface depressions; it does not indicate whether the ligand can maintain substrate-like contacts there. The ligand must be placed into each site in turn to learn which positions are truly viable, and whether forced placement disrupts contacts with catalytic residues.
+Hypothesis
+Positions near the cleft can maintain a pose centered on the catalytic cysteine, while distant cavities lose the catalytic contacts
+Observation
+Three positions within the cleft maintained contact with Cys25; the adjacent small pocket and the distal pit did not.
+Interpretation
+Whether the ligand can be stably placed at a given site correlates strongly with whether that site lies in the catalytic cleft. The adjacent small pocket failed to retain the ligand in all structures, and the distal pit appeared only when the ligand was placed there, with no catalytic contact. The cleft rim was as stable as the cleft core, indicating that placement does not depend on how many rim residues are included. The site assignment is therefore independently supported: only the catalytic cleft satisfies both substrate-like contacts and proximity to the catalytic residues.
+
+Follows Initial prediction to observe where the ligand is placed, Paired enumeration of surface cavities and measurement of representative structural poses
+
+Q5在结合位点一致的情况下，能否进一步缩小配体取向和尾链构象的差异？
+已解决
+
+紧随第四季度之后
+动机：结合位点相同，但配体尾部指向不同方向，因此需要确定这反映的是接触描述的不完整，还是配体自身的柔性。结论：核心和亮氨酸侧链在 1 Å 范围内保持稳定，而胍基尾部始终表现出 0.6–1.4 Å 的扩散范围，这反映了配体自身的柔性。
+5.1比较裂隙内配体的方向
+完全的
+
+这种分歧
+Why study this
+The structures in the cleft still differ appreciably in ligand orientation; measuring which group the differences are concentrated in is needed before deciding which segment to narrow next, rather than blindly adding requirements.
+Hypothesis
+The differences concentrate in the orientation of the guanidinium tail and the terminal carboxyl group; the catalytic core is stable
+Observation
+The core and the leucine remain essentially unchanged; the tail chain scatters over 0.6-1.4 Å and is the only source of difference.
+Interpretation
+The divergence is concentrated in the guanidinium group and the alkyl tail chain, not in the core: the terminal carboxyl group and the leucine side chain in S2 stay within 1 Å in all structures, while the tail chain fluctuates over 0.6-1.4 Å (median about 1 Å in most structures) and makes peripheral contacts with the groove edges at 61-63 and 67-72. Each structure places the same chemical group on the same anchor atom, and the difference lies only on the tail-chain side. This identifies a concrete feature to narrow down.
+
+Follows Placing the ligand into each cavity in turn to test which positions are viable
+
+5.2考察预测结果中的尾链和羧基接触情况
+完全的
+
+这一结果
+Why study this
+Since the differences concentrate in the tail chain, the spread can be examined by comparing predictions that emphasize different tail-chain contacts: if the spread narrows, the contact description may be insufficient; if it does not change, the cause is the ligand's own flexibility.
+Hypothesis
+Explicitly describing the tail chain's contacts along the groove wall and the anchoring of the carboxyl group will reduce tail-chain spread, whereas adding edge contacts will increase it
+Observation
+All predictions placed the ligand in contact with the catalytic cysteine; the tail-chain positions remained scattered over 0.62–0.88 Å, and one prediction was insensitive to the different contact descriptions.
+Interpretation
+Different contact descriptions did change the tail-chain positions, but the differences fell within each structure's own scatter range, and one prediction was insensitive to all descriptions, so no description truly eliminated the tail-chain divergence. Tail-chain flexibility appears more like an intrinsic degree of freedom of the ligand on the relatively open side of the groove than an inadequate contact description.
+
+Follows Comparing ligand orientations within the cleft
+
+5.3对同一裂缝的进一步预测
+完全的
+
+这种差异
+Why study this
+Further predictions are needed to judge whether the set of poses has saturated and whether the local chemistry remains consistent.
+Hypothesis
+New predictions still fall at the same site; the local carboxyl coordination may vary somewhat
+Observation
+The new structures all occupy the same site; the two coordination distances of the terminal carboxyl group vary somewhat between predictions but remain close in the best-defined cases.
+Interpretation
+The set of poses in the cleft recurs repeatedly, so the site assignment is stable. The local chemistry varies: in some predictions the catalytic cysteine is positioned correctly but the two coordinations of the terminal carboxyl with positions 19 and 164 are relaxed; in others both are maintained. This variation does not change the site conclusion; it is a limitation of the local geometry that should be reported rather than a reason to change sites.
+
+Follows Examining tail-chain and carboxyl contacts across predictions
+
+Q6这些结构在物理上是否合理？该模型对它们的可靠性有多大信心？
+已解决
+
+合并Q2，第四季度，Q5
+合成原理：高置信度并不能保证合理的几何结构，因此在交付前需要进行独立的几何和化学验证。结论：主链和扭转角结构清晰，界面相互作用合理，但催化半胱氨酸与配体之间始终存在约1 ​​Å的重叠。
+6.1对几何质量和界面交互进行独立检查
+完全的
+
+这种原子重叠
+Why study this
+High model confidence does not mean the geometry is sound; local defects must be identified through independent geometric and chemical measurements before judging whether revision is needed.
+Hypothesis
+The selected structure is overall self-consistent, but the interface may contain local defects (too-close contacts, suboptimal carboxyl coordination)
+Observation
+Coordinates are complete and torsion angles show no outliers; the worst ligand overlap is 1.10–1.18 Å, all between the sulfur of cysteine 25 and a ligand carbon.
+Interpretation
+The overall backbone and torsion angles are clean, and the interface chemistry is also sensible: the environments near cysteine 25, glutamine 19, and glycine 68 are all reasonable hydrogen-bond acceptor environments. The defect is concentrated where the ligand meets the catalytic cysteine: for a ring-opened ligand supplied in non-covalent form, a sulfur–carbon distance of 2.2–2.45 Å implies an overlap of about 1 Å, present in every structure in which the ligand reaches this cysteine. This is not an overall misfold but a single local geometric problem, and it is the object that needs to be decided upon for revision.
+
+Follows Further predictions at the same cleft
+
+Q7这种原子重叠是否需要修正？修正后的原子重叠在多大程度上才算得到解决？
+已解决
+
+紧随Q6之后
+动机：未解决的重叠问题将构成交付缺陷，因此在采取行动之前需要明确可测试的验收标准。结论：所有将两侧间距拉至 3.2 Å 以上的尝试均告失败，或成功但代价是失去了催化位点的接触；因此未进行任何修改，并将重叠问题列为一项局限性。
+7.1首先设定验收标准，然后尝试消除催化半胱氨酸处的重叠。
+完全的
+
+这种原子重叠
+Why study this
+The overlap between the catalytic cysteine and the ligand appears consistently across multiple structures; if it is a real defect, the delivery would be unacceptable. Before making changes, testable acceptance criteria must be stated, otherwise it cannot be judged whether a correction succeeded.
+Hypothesis
+While maintaining the catalytic contacts, pull the two sides to more than 3.2 Å apart and the overlap disappears
+Observation
+The attempted revisions did not meet all the criteria: neither the separation between the two sides nor the ligand overlap fell within the intended ranges, and both terminal coordinations were retained throughout.
+Interpretation
+None of the five criteria were met: attempts to separate the two sides did not achieve the intended distance, and the overlap remained at the ~1 Å level. In the structures that pushed the distance beyond 3.3 Å, the cost was loss of contact with the catalytic cysteine. Therefore, judged against the criteria, this geometry cannot be repaired under a non-covalent description. A sulfur–carbon distance of 2.2–2.45 Å recurred across multiple predictions, suggesting it may reflect the geometry of an epoxide-ring-opened adduct rather than insufficient sampling; however, no covalent-adduct structure was tested here, so this cannot be treated as an established mechanism.
+
+Follows Independent check of geometric quality and interface interactions
+
+Q8最终将交付哪些结构，以及这些结构的真实准确性在多大程度上可以确定？
+已解决
+
+合并Q6，Q7
+合成动机：提供可下载的结构，并明确证据的局限性。结论：提供了五个预测的配体位于催化裂隙中的复合物结构；由于目前尚无该复合物的实验结构，因此其真实准确性尚不清楚。
+8.1交付选定的复杂结构和选择记录
+完全的
+
+这些交付的结构
+Why study this
+The study ultimately needs to result in downloadable structures and a traceable basis for selection, so that the relationship between the delivered content and the evidence can be checked.
+Observation
+All five structures are readable, their protein chains match the input, and each ligand has 25 heavy atoms.
+Interpretation
+The five delivered structures all come from the same conformational group at the same site, and their confidence differs only marginally; this similarity is not strong evidence for preferring one over another.
+
+Follows Set acceptance criteria first, then try to remove the overlap at the catalytic cysteine, Verify the confidence fields and complete the last unoccupied cavity
+
+8.2核对置信度字段，并填写最后一个未占用的空腔。
+完全的
+
+这一证据
+Why study this
+The confidence values may not distinguish the ligand chain, and one cavity-capable site had not yet been tested with a ligand placed in it; both points affect the reliability of the confidence description and the site conclusions.
+Hypothesis
+In this two-chain system, the confidence value of the ligand chain cannot be distinguished from the overall value
+Observation
+Across most predictions, the inter-chain confidence values equal the overall values; the last cavity behaves the same as the other distal pockets.
+Interpretation
+Two points were considered: whether the interface confidence actually characterizes the ligand, and whether all surface cavities had been tested with the ligand. In this two-chain system, the inter-chain confidence values in most predictions equal the overall values and do not separately characterize the ligand; the confidence description therefore uses this available value uniformly without claiming ligand-specific confidence from it. For cavities, the previously untested one was completed; it falls within the distal surface group and behaves consistently with the other pockets in that group. Both points were handled according to the evidence, and the site conclusions were unchanged.
+
+Follows Set acceptance criteria first, then try to remove the overlap at the catalytic cysteine
+
+已提供五个预测的复合物结构。该蛋白质为218个氨基酸残基的单链，配体为所提供的开环环氧琥珀酰型化合物（净电荷+1，两个立体中心）；这些结构与输入序列以及配体的连接方式和立体化学性质一致。
+
+位点。在候选结构中，配体几乎总是占据同一个裂隙，并与一组固定的残基（19、22-26、61-72、136、162-165）接触；该裂隙包含Cys25和His163/His164。为了验证这是否反映了单一的偏好性，我还考察了表面空腔，并检查了配体在每个空腔中的位置：配体始终占据同一个裂隙，而相邻的小口袋和远端凹陷要么重新回到该位点，要么失去了催化接触。因此，位点最终确定为该催化裂隙。
+
+取向和柔性。叠加后，末端羧酸根和亮氨酸侧链之间的距离保持在 1 Å 以内，差异仅限于胍基尾部（扩展范围为 0.6–1.4 Å）。进一步的预测并未显著缩小该扩展范围；尾部的柔性更像是配体在沟槽开放侧的固有自由度。
+
+是否需要进行修改？几何和化学检查显示主链和扭转角均符合预期，界面相互作用也合理；唯一存在的缺陷是催化半胱氨酸硫原子与配体碳原子之间存在 2.2–2.45 Å 的距离，对于非共价配体而言，这意味着大约 1 Å 的原子重叠。因此，值得尝试进行修改。在开始修改之前，我制定了五个可测试的验收标准（两侧距离 ≥3.2 Å，配体重叠 <0.6 Å，Cys25 仍保持在 4.5 Å 的接触范围内，与残基 19 和 164 的配位得以保留，至少 15 个界面接触），然后尝试在保持催化接触的情况下拉开两侧。但没有一个尝试满足这些标准：距离无法超过 3.2 Å，重叠仍然保持在约 1 Å 的水平；唯一能够拉开两侧的结构却失去了与催化半胱氨酸的接触。因此，修订后的结构未被采纳，而是沿用了修订前的构象，并将这种重叠视为一个局限性。这种重叠在多个预测结果中反复出现，这可能表明环氧环开环后形成了加合物，但本文并未研究共价加合物结构；这只是推测，并非结论。
+
+筛选结果。五个筛选出的结构均将配体置于同一裂隙中，彼此之间仅有细微差异；这种相似性不足以作为强有力的证据。置信度来自 AF3Score：在五个结构中，蛋白质主体具有相对较高的 pLDDT 值，配体界面处的 ipTM 值约为 0.94–0.97，表明该模型对这种结合模式相当有把握——尽管置信度并不等同于实验精度。
+
+局限性。由于缺乏该蛋白-配体复合物的实验结构可供比较，因此其真实构象精度（RMSD、lDDT-PLI）未知；尾部方向不确定；催化半胱氨酸的重叠部分也未解析。文献证据仅提供了抽象层面、家族层面的机制线索（亮氨酸进入S2位点，环氧化物攻击催化半胱氨酸），这些线索并未用于确定任何残基位置。具体的实现方式属于内部细节，此处不作描述。
+
+预测的复合物以 mmCIF 文件格式提供；我只能提供 CIF/mmCIF 结构文件，不能提供其他文件格式。
+
+
+最终结构 1
+在结构面板中打开
+
+最终结构 2
+在结构面板中打开
+
+最终结构 3
+在结构面板中打开
+
+最终结构 4
+在结构面板中打开
+
+最终结构 5
+在结构面板中打开
+

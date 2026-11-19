@@ -1,0 +1,132 @@
+[
+  {
+    "id": "1.1",
+    "title": "Verify protein sequence and ligand chemical identity",
+    "fields": {
+      "Why study this": "Each task requirement—preserving the sequence as given, the ligand identity, stereochemistry and charge—must be tied to a concrete molecular entity; if the ligand were misidentified or its charge altered, all downstream contact measurements would be meaningless.",
+      "Hypothesis": "The supplied ligand resembles the scaffold of known epoxy-class cysteine protease inhibitors but lacks the epoxide ring",
+      "Observation": "Protein: single chain of 218 residues; ligand: 25 heavy atoms, net charge +1, two chiral centers, no epoxide ring.",
+      "Interpretation": "The input maps unambiguously to one protein chain and one small organic molecule, with the chain length and all atoms preserved in the structure. The ligand differs from known epoxide-class inhibitors only in that the epoxide ring is opened to a diol and carboxyl group; this difference bears on whether a covalent adduct could form, and this task treats the given opened-ring form as specified."
+    }
+  },
+  {
+    "id": "1.2",
+    "title": "Literature-based mechanistic clues for the substrate groove and epoxide-class inhibitors",
+    "fields": {
+      "Why study this": "The open-ring form of the ligand differs from known epoxide-class inhibitors, which informs the expected binding mode; literature clues provide testable structural expectations rather than relying only on self-confirming predictions.",
+      "Hypothesis": "The ligand should be embedded in the substrate groove, with the leucine side chain entering the S2 pocket and the guanidinium group extending toward one side of the groove.",
+      "Observation": "Literature supports the inhibitor identity and mechanistic direction: leucine entering S2 and the epoxide attacking the catalytic cysteine; no residue numbering for this construct is given.",
+      "Interpretation": "Mechanism-level evidence supports the ligand's inhibitor identity and provides checkable directions: the ligand should lie in the substrate groove, leucine enters S2, and the terminal carboxyl group interacts with a polar or positively charged partner. These descriptions remain at the family level and lack residue numbering for this protein, so they cannot fix any contact and serve only as competing hypotheses to compare against structural readings. The search reached only abstract and fragment level; no full-text mechanistic reading was done.",
+      "Follows": "Verify protein sequence and ligand chemical identity"
+    }
+  },
+  {
+    "id": "2.1",
+    "title": "Initial prediction to observe where the ligand is placed",
+    "fields": {
+      "Why study this": "The ligand position in the initial predicted structures is a starting point for judging the binding site; later structures can then be compared with it.",
+      "Hypothesis": "At least one pocket will be repeatedly occupied, and the ligand will run in a substrate-like orientation",
+      "Observation": "The chain and ligand atoms are complete; the contact residue set is the same across all structures, concentrated at the same cleft.",
+      "Interpretation": "The inhibitor was placed in the same well-defined cleft, with an identical contact residue set across all structures, consistent with the substrate groove of a cysteine protease. This cleft contains Cys25 and His163, His164, forming the catalytic combination commonly seen in this class of proteases; this is internal consistency within the predicted structures, not experimental proof. No second site was supported, but this only indicates that no other site was found. Which end of the ligand faces which side still requires examination at the level of pose orientation, on which the following site and orientation checks are designed.",
+      "Follows": "Verify protein sequence and ligand chemical identity, Literature-based mechanistic clues for the substrate groove and epoxide-class inhibitors"
+    }
+  },
+  {
+    "id": "3.1",
+    "title": "Paired enumeration of surface cavities and measurement of representative structural poses",
+    "fields": {
+      "Why study this": "To judge whether the site is unique, surface cavities must be examined separately while the pose geometry at the occupied site is also measured, so that they can serve as targets for subsequent ligand placement.",
+      "Hypothesis": "The occupied cleft should be a prominent cavity, and there should be additional unoccupied cavities elsewhere on the surface.",
+      "Observation": "Three cavities correspond to the observed cleft, one is adjacent to it, and the remainder lie on distal surfaces.",
+      "Interpretation": "The cavity assessment and the predicted structures converge on the same catalytic cleft, and the representative structure already shows a substrate-like orientation: one end of the ligand presses against the catalytic cysteine, and the terminal carboxyl group makes coordinating contacts with Gln19 and His164. At the site level, therefore, no replacement is needed; what requires examination is the orientation and local geometry. Still undetermined are the path of the guanidinium tail along one side of the groove, and whether the backbone and side chains at residues 61-72 are consistent across the different structures; these two points become the subject of subsequent questions.",
+      "Follows": "Initial prediction to observe where the ligand is placed"
+    }
+  },
+  {
+    "id": "4.1",
+    "title": "Placing the ligand into each cavity in turn to test which positions are viable",
+    "fields": {
+      "Why study this": "The cavity map only shows surface depressions; it does not indicate whether the ligand can maintain substrate-like contacts there. The ligand must be placed into each site in turn to learn which positions are truly viable, and whether forced placement disrupts contacts with catalytic residues.",
+      "Hypothesis": "Positions near the cleft can maintain a pose centered on the catalytic cysteine, while distant cavities lose the catalytic contacts",
+      "Observation": "Three positions within the cleft maintained contact with Cys25; the adjacent small pocket and the distal pit did not.",
+      "Interpretation": "Whether the ligand can be stably placed at a given site correlates strongly with whether that site lies in the catalytic cleft. The adjacent small pocket failed to retain the ligand in all structures, and the distal pit appeared only when the ligand was placed there, with no catalytic contact. The cleft rim was as stable as the cleft core, indicating that placement does not depend on how many rim residues are included. The site assignment is therefore independently supported: only the catalytic cleft satisfies both substrate-like contacts and proximity to the catalytic residues.",
+      "Follows": "Initial prediction to observe where the ligand is placed, Paired enumeration of surface cavities and measurement of representative structural poses"
+    }
+  },
+  {
+    "id": "5.1",
+    "title": "Comparing ligand orientations within the cleft",
+    "fields": {
+      "Why study this": "The structures in the cleft still differ appreciably in ligand orientation; measuring which group the differences are concentrated in is needed before deciding which segment to narrow next, rather than blindly adding requirements.",
+      "Hypothesis": "The differences concentrate in the orientation of the guanidinium tail and the terminal carboxyl group; the catalytic core is stable",
+      "Observation": "The core and the leucine remain essentially unchanged; the tail chain scatters over 0.6-1.4 Å and is the only source of difference.",
+      "Interpretation": "The divergence is concentrated in the guanidinium group and the alkyl tail chain, not in the core: the terminal carboxyl group and the leucine side chain in S2 stay within 1 Å in all structures, while the tail chain fluctuates over 0.6-1.4 Å (median about 1 Å in most structures) and makes peripheral contacts with the groove edges at 61-63 and 67-72. Each structure places the same chemical group on the same anchor atom, and the difference lies only on the tail-chain side. This identifies a concrete feature to narrow down.",
+      "Follows": "Placing the ligand into each cavity in turn to test which positions are viable"
+    }
+  },
+  {
+    "id": "5.2",
+    "title": "Examining tail-chain and carboxyl contacts across predictions",
+    "fields": {
+      "Why study this": "Since the differences concentrate in the tail chain, the spread can be examined by comparing predictions that emphasize different tail-chain contacts: if the spread narrows, the contact description may be insufficient; if it does not change, the cause is the ligand's own flexibility.",
+      "Hypothesis": "Explicitly describing the tail chain's contacts along the groove wall and the anchoring of the carboxyl group will reduce tail-chain spread, whereas adding edge contacts will increase it",
+      "Observation": "All predictions placed the ligand in contact with the catalytic cysteine; the tail-chain positions remained scattered over 0.62–0.88 Å, and one prediction was insensitive to the different contact descriptions.",
+      "Interpretation": "Different contact descriptions did change the tail-chain positions, but the differences fell within each structure's own scatter range, and one prediction was insensitive to all descriptions, so no description truly eliminated the tail-chain divergence. Tail-chain flexibility appears more like an intrinsic degree of freedom of the ligand on the relatively open side of the groove than an inadequate contact description.",
+      "Follows": "Comparing ligand orientations within the cleft"
+    }
+  },
+  {
+    "id": "5.3",
+    "title": "Further predictions at the same cleft",
+    "fields": {
+      "Why study this": "Further predictions are needed to judge whether the set of poses has saturated and whether the local chemistry remains consistent.",
+      "Hypothesis": "New predictions still fall at the same site; the local carboxyl coordination may vary somewhat",
+      "Observation": "The new structures all occupy the same site; the two coordination distances of the terminal carboxyl group vary somewhat between predictions but remain close in the best-defined cases.",
+      "Interpretation": "The set of poses in the cleft recurs repeatedly, so the site assignment is stable. The local chemistry varies: in some predictions the catalytic cysteine is positioned correctly but the two coordinations of the terminal carboxyl with positions 19 and 164 are relaxed; in others both are maintained. This variation does not change the site conclusion; it is a limitation of the local geometry that should be reported rather than a reason to change sites.",
+      "Follows": "Examining tail-chain and carboxyl contacts across predictions"
+    }
+  },
+  {
+    "id": "6.1",
+    "title": "Independent check of geometric quality and interface interactions",
+    "fields": {
+      "Why study this": "High model confidence does not mean the geometry is sound; local defects must be identified through independent geometric and chemical measurements before judging whether revision is needed.",
+      "Hypothesis": "The selected structure is overall self-consistent, but the interface may contain local defects (too-close contacts, suboptimal carboxyl coordination)",
+      "Observation": "Coordinates are complete and torsion angles show no outliers; the worst ligand overlap is 1.10–1.18 Å, all between the sulfur of cysteine 25 and a ligand carbon.",
+      "Interpretation": "The overall backbone and torsion angles are clean, and the interface chemistry is also sensible: the environments near cysteine 25, glutamine 19, and glycine 68 are all reasonable hydrogen-bond acceptor environments. The defect is concentrated where the ligand meets the catalytic cysteine: for a ring-opened ligand supplied in non-covalent form, a sulfur–carbon distance of 2.2–2.45 Å implies an overlap of about 1 Å, present in every structure in which the ligand reaches this cysteine. This is not an overall misfold but a single local geometric problem, and it is the object that needs to be decided upon for revision.",
+      "Follows": "Further predictions at the same cleft"
+    }
+  },
+  {
+    "id": "7.1",
+    "title": "Set acceptance criteria first, then try to remove the overlap at the catalytic cysteine",
+    "fields": {
+      "Why study this": "The overlap between the catalytic cysteine and the ligand appears consistently across multiple structures; if it is a real defect, the delivery would be unacceptable. Before making changes, testable acceptance criteria must be stated, otherwise it cannot be judged whether a correction succeeded.",
+      "Hypothesis": "While maintaining the catalytic contacts, pull the two sides to more than 3.2 Å apart and the overlap disappears",
+      "Observation": "The attempted revisions did not meet all the criteria: neither the separation between the two sides nor the ligand overlap fell within the intended ranges, and both terminal coordinations were retained throughout.",
+      "Interpretation": "None of the five criteria were met: attempts to separate the two sides did not achieve the intended distance, and the overlap remained at the ~1 Å level. In the structures that pushed the distance beyond 3.3 Å, the cost was loss of contact with the catalytic cysteine. Therefore, judged against the criteria, this geometry cannot be repaired under a non-covalent description. A sulfur–carbon distance of 2.2–2.45 Å recurred across multiple predictions, suggesting it may reflect the geometry of an epoxide-ring-opened adduct rather than insufficient sampling; however, no covalent-adduct structure was tested here, so this cannot be treated as an established mechanism.",
+      "Follows": "Independent check of geometric quality and interface interactions"
+    }
+  },
+  {
+    "id": "8.1",
+    "title": "Deliver selected complex structures and the selection record",
+    "fields": {
+      "Why study this": "The study ultimately needs to result in downloadable structures and a traceable basis for selection, so that the relationship between the delivered content and the evidence can be checked.",
+      "Observation": "All five structures are readable, their protein chains match the input, and each ligand has 25 heavy atoms.",
+      "Interpretation": "The five delivered structures all come from the same conformational group at the same site, and their confidence differs only marginally; this similarity is not strong evidence for preferring one over another.",
+      "Follows": "Set acceptance criteria first, then try to remove the overlap at the catalytic cysteine, Verify the confidence fields and complete the last unoccupied cavity"
+    }
+  },
+  {
+    "id": "8.2",
+    "title": "Verify the confidence fields and complete the last unoccupied cavity",
+    "fields": {
+      "Why study this": "The confidence values may not distinguish the ligand chain, and one cavity-capable site had not yet been tested with a ligand placed in it; both points affect the reliability of the confidence description and the site conclusions.",
+      "Hypothesis": "In this two-chain system, the confidence value of the ligand chain cannot be distinguished from the overall value",
+      "Observation": "Across most predictions, the inter-chain confidence values equal the overall values; the last cavity behaves the same as the other distal pockets.",
+      "Interpretation": "Two points were considered: whether the interface confidence actually characterizes the ligand, and whether all surface cavities had been tested with the ligand. In this two-chain system, the inter-chain confidence values in most predictions equal the overall values and do not separately characterize the ligand; the confidence description therefore uses this available value uniformly without claiming ligand-specific confidence from it. For cavities, the previously untested one was completed; it falls within the distal surface group and behaves consistently with the other pockets in that group. Both points were handled according to the evidence, and the site conclusions were unchanged.",
+      "Follows": "Set acceptance criteria first, then try to remove the overlap at the catalytic cysteine"
+    }
+  }
+]

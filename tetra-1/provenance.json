@@ -1,0 +1,30 @@
+{
+  "source": "User-provided Tetra-1 text and exported CIF files",
+  "original_url": "https://simplexfoundry.com/tetra-1/result/?id=4VTJvHd29oQLcwMc__xLHTaiwIbomOBJ",
+  "files": [
+    {
+      "file": "ver_2beb2ce8eb22105b8aa832f8a7e30c4d.cif",
+      "sha256": "49ae4ae575b2dba782ecdb6194e11b8437887e1e62d3be4aa62d9a6f6a7d392f"
+    },
+    {
+      "file": "ver_587cc5da9d71a2233a27f485c164163f.cif",
+      "sha256": "7fcee3198afd64a1b52d586b536f767722e83f0dec32e8b1030d5751b0cd71fe"
+    },
+    {
+      "file": "ver_9aaed8476b09bc872288783c13177802.cif",
+      "sha256": "da1b7e70e0e3b37a3195a74b6600768db262319c5f87f45e2143b69d86eba9d3"
+    },
+    {
+      "file": "ver_d49c4786b4e92467beeea6eab69fe0d4.cif",
+      "sha256": "c8d1addb6c34bb7bdfb962a409b7680c2f3837931f818cd851d8889260fec3fc"
+    },
+    {
+      "file": "ver_f8fb875856336333d3974b52cb69aa5d.cif",
+      "sha256": "0fe7aa9f3f54633aeb4b83995284b356ad21ed31afde28841932248f1bfee0ce"
+    },
+    {
+      "file": "original-result.txt",
+      "sha256": "a57afd724b6962f85c1c925beddbd9028c425053d309a7c35afd00dff050d603"
+    }
+  ]
+}
